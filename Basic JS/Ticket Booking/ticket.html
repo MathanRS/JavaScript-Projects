@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ticket Booking</title>
+   <style>
+      body{
+         font-family:Arial, Helvetica, sans-serif;
+         height: 100vh;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      div{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+      }
+      #ticket{
+         width: 150px;
+         height: 30px;
+         margin-top: 10px;
+         border-style:dashed ;
+         border-width: 2px;
+      }
+      button{
+         margin-top: 10px;
+         padding: 10px;
+      }
+      #ans{
+          font-size: 30px;
+          padding: 20px;
+      }
+   
+
+   </style>
+   <script src ="ticket.js"></script>
+</head>
+<body>
+   
+   <div>
+   <label for="ticket"> Enter a Ticket </label>
+   <input type="text" id="ticket" name ="ticket" min="1" maxlength="20">
+   <button id ="submit">Submit</button>
+   <label id="ans" ></label>
+   </div>
+   <script>
+
+
+document.getElementById("submit").onclick = function () {
+    let ans = document.getElementById("ticket").value;
+    ans = parseInt(ans); 
+    if (ans < 1) {
+        document.getElementById("ans").innerHTML =`Atleast select one`;
+    } else if (ans > 20) {
+        ans = 20;
+        document.getElementById("ans").innerHTML = `only max 20 persons only available and for 20 people tickets =${ans*200}`;
+    }
+    else {
+      document.getElementById("ans").innerHTML = ans*200;
+    }
+    
+}
+
+
+  
+   </script>
+</body>
+</html>

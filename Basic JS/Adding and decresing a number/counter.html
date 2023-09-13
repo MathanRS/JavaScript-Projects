@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Counter Program</title>
+   <style>
+      *{
+         background-color: rgb(48, 44, 44);
+      }
+      div{
+         align-items: center;
+         text-align: center;
+
+
+      }
+      button{
+         background-color: rgb(164, 70, 70);
+         text-align: center;
+         width : 100px;
+         height: 50px;
+         color : white ;
+      }
+      #ans{
+         color: aliceblue;
+         font-size: 50px;
+         text-align: center;
+         
+      }
+   </style>
+</head>
+<body>
+   <div>
+      <label id="ans">0</label><br>
+      <button id="decrease">decrese</button>
+      <button id ="Reset" > Reset </button>
+      <button id = "Increase" >Increase</button>
+   </div>
+<script>
+   let count = 0;
+   document.getElementById("decrease").onclick=function(){
+      count = count-1;
+      document.getElementById("ans").innerHTML =count ;
+   }
+   document.getElementById("Reset").onclick=function(){
+      count = 0;
+      document.getElementById("ans").innerHTML =count ;
+   }
+   
+   document.getElementById("Increase").onclick=function(){
+      count = count +1;
+      document.getElementById("ans").innerHTML =count ;
+
+   }
+</script>
+
+</body>
+</html>
